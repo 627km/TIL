@@ -55,4 +55,17 @@ SELECT num, name FROM student;  -- num, name만
 - `*(asterisk)`를 입력하면 전체 column에 대한 데이터를 조회한다. 
 - 특정 column명(`num`, `name`)을 입력하면 그 column에 대한 데이터만 조회한다. 
 ### 2.3 UPDATE
+```sql
+UPDATE student SET major = '컴퓨터공학과' 
+WHERE id = 1711111;
+```
+- `WHERE`은 조건을 나타낸다.
+- `id`가 1711111인 데이터의 `major`를 컴퓨터공학과로 수정
+- `WHERE`절을 사용하지 않으면 모든 `major` 데이터가 수정된다. 
 ### 2.4 DELETE
+```sql
+DELETE FROM student 
+WHERE id = 1722222;
+```
+- `id`가 1722222인 행을 삭제
+- `UPDATE`와 마찬가지로 `WHERE`절을 입력하지 않으면 `student`테이블의 모든 데이터가 삭제된다.
