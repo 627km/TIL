@@ -70,3 +70,13 @@ WHERE id = 1722222; -- 조건
 ```
 - `id`가 1722222인 행을 삭제
 - `UPDATE`와 마찬가지로 `WHERE`절을 입력하지 않으면 `student`테이블의 모든 데이터가 삭제된다.
+## 3. 사용자 생성
+```sql
+CREATE USER 'user01'@'%' IDENTIFIED BY '111111';
+GRANT ALL PRIVILEGES ON school.* TO 'user01'@'%';
+FLUSH PRIVILEGES;
+```
+- 유저명을 `user01`로 하고, 비밀번호를 `111111`으로 한다.
+- `%`을 표기하면 원격 접속 권한을 준다는 의미이다. 
+- `GRANT`는 권한을 부여하는 명령어이다. 
+- `FLUSH PRIVILEGES`는 refresh 같은 의미이다.
