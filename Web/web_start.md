@@ -121,3 +121,31 @@
 ```
 - `<ul>`은 동그라미로 목록이 매겨지고, `<ol`>은 숫자로 목록이 매겨진다.
 - `<li>`는 목록에 들어가는 요소를 표현하는 tag이다. 
+### 3.5 `<img>` Tag
+```html
+<img src="img/p1.jpg"> <!-- 내PC에 저장되어있는 이미지 -->
+<img src="http://www.hanbit.co.kr/images/common/logo_hanbit.png">   <!-- 내PC에 저장되어 있지 않은 이미지도 불러올 수 있다. -->
+```
+- 시작태그 안에 `src="주소(경로)"`를 입력 해 준다. 
+- 끝 tag가 없다. 
+### 3.6 `<audio>`, `<video>` Tag
+```html
+<audio src="img/mp.mp3" controls="controls"></audio>
+<video src="img/movie.mp4" controls="controls"></video>
+```
+- `<img>`와 동일하게 `src="주소(경로)"`를 입력 해 준다.
+- `controls="controls"`를 입력해서 재생을 조절 할 수 있다.
+### 3.7 `<table>` Tag
+```html
+<table border="2px" width="400px">  <!-- 테이블의 테두리는 2px, 테이블의 너비는 400px로 지정, px : 픽셀>
+	<thead>	<!-- 테이블 헤드 -->
+		<tr><th>ID</th><th>PWD</th><th>NAME</th></tr>   <!-- 열 이름 -->
+	</thead>
+	<tbody> <!-- 테이블 바디 -->
+		<tr><td>id01</td><td>pwd01</td><td>이말숙</td></tr>
+		<tr><td>id02</td><td>pwd02</td><td>이말숙</td></tr>
+		<tr><td>id03</td><td>pwd03</td><td>이말숙</td></tr>
+		<tr><td>id04</td><td>pwd04</td><td>이말숙</td></tr>
+		<tr><td>id05</td><td>pwd05</td><td>이말숙</td></tr>
+	</tbody>
+</table>
