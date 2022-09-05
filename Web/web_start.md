@@ -78,11 +78,46 @@
 ##### Hello word!
 ###### Hello word!
 - 제목을 표현할 때 사용
+- 한 줄을 모두 차지하는 `Block` tag 이다.
+- 따라서 자동으로 줄바꿈이 된다. 
 - h1 ~ h6 까지 있으며, 숫자가 작을 수록 텍스트의 크기가 크다.
-- 단순히 크기를 키울 목적으로 사용하지 않는다. 
+- 단순히 크기를 키울 목적으로 사용하지 않는다.
 ### 3.2 <a> Tag
 ```html
 <a href="https://github.com/627km"></a>
 ```
 - 시작 태그에 `href="주소"` 가 들어간다.
 - 마우스 커서를 위에 가져다 놓으면 유일하게 손가락으로 바뀌는 태그이다.
+- 자신의 텍스트의 크기만큼만 자리를 차지하는 `Inline` tag 이다.
+- 따라서 엔터를 후에 입력해도 줄바꿈이 되지않고 바로 옆에 붙는다. 
+### 3.3 <p> Tag
+```html
+<p> 
+    What did we poor humans do before the advent of Mark Zuckerberg’s collegiate brainstorm? Let’s see, we smiled when we “liked” something, we dialed the phone to “update” friends and “tagging” was a kids’ game. Then came teenage Zuck and his shrewdly rolled-out vision for a new kind of digital club where you played bouncer, all with a Machiavellian backstory that eventually merited its own Oscar-winning movie, The Social Network. Facebook haters crowed after its hyped IPO last May quickly went sour, but the company has bounced back with a fiscal vengeance. What did we poor humans do before the advent of Mark Zuckerberg’s collegiate brainstorm? Let’s see, we smiled when we “liked” something, we dialed the phone to “update” friends and “tagging” was a kids’ game.
+</p> 
+<p>
+    Then came teenage Zuck and his shrewdly rolled-out vision for a new kind of digital club where you played bouncer, all with a Machiavellian backstory that eventually merited its own Oscar-winning movie, The Social Network. Facebook haters crowed after its hyped IPO last May quickly went sour, but the company has bounced back with a fiscal vengeance.
+</p>
+```
+- <p> Tag는 문단(내용)을 나타낼 때 사용한다.
+- 한 줄을 모두 차지하는 `Block` Tag 이다
+- 자동으로 줄 바꿈이 된다. 
+- <p> Tag끼리 연속으로 있으면 약간의 여백이 자동으로 적용된다. 
+### 3.4 <ul>, <ol> Tag
+```html
+<ul>    <!--번호가 없는 일반 동그라미 목록 -->
+	<li>HOME</li>
+	<li>WOMAN</li>
+	<li>MAN</li>
+	<li>CHILD</li>
+</ul>   
+	
+<ol>    <!-- 번호가 있는 목록 -->
+	<li>HOME</li>	
+	<li>WOMAN</li>
+	<li>MAN</li>
+	<li>CHILD</li>
+</ol>
+```
+- <ul>은 동그라미로 목록이 매겨지고, <ol>은 숫자로 목록이 매겨진다.
+- <li>는 목록에 들어가는 요소를 표현하는 tag이다. 
