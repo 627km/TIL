@@ -149,3 +149,18 @@
 		<tr><td>id05</td><td>pwd05</td><td>이말숙</td></tr>
 	</tbody>
 </table>
+```
+## 4. 입력양식태그 
+```html
+<form action="/loginimpl" method="get"> 
+<label for="id">ID</label>
+<input id= "id" type="text" name="id">	<!-- id는 고유한 값, name은 서버로 전송할 때 사용 -->
+<br>
+<label for="pwd">PWD</label>
+<input id= "pwd" type="password" name="pwd">
+<br>
+<input type="submit" value="LOGIN"> <!-- 입력된 값이 서버에 전달된다. -->
+</form>
+```
+- `method="get"`방식은 id와 pwd가 노출된다.  
+- `method="post"`방식은 id와 pwd가 화면에 보이지 않고, 서버로 전달된다.
