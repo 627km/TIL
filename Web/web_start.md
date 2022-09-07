@@ -162,6 +162,61 @@
 <input type="submit" value="LOGIN"> <!-- 입력된 값이 서버에 전달된다. -->
 </form>
 ```
-> ![](input_tag.jpg)
 - `method="get"`방식은 id와 pwd를 입력하고 로그인버튼을 클릭하면 데이터가 노출된다.  
 - `method="post"`방식은 id와 pwd를 입력하고 로그인버튼을 클릭하면 화면에 보이지 않고, 서버로 전달된다.
+## 5. CSS
+### 5.1 CSS 기본문법
+```css
+<style>
+h1{
+    color: red;
+}
+h1 > a{
+    color: red;
+}
+</style>
+```
+- HTML파일에 CSS를 적용할 경우 `<head></head>`안에 `<style></style>`을 입력 후 style태그 사이에 입력한다. 
+- 스타일을 줄 때, html 태그를 명시한 후 { }안에 코드를 입력한다.
+- `a`태그가 여러 개 일 경우, 특정 `a`태그에만 스타일을 주려면 어떤 태그안에 있는 `a`태그인지 명시해준다.(ex. `h1 > a`, `img > a`, 등등 ...)
+   
+```css
+<style>
+    #header{
+        color: black;
+    }
+
+    .sub_header{
+        color: blue;
+    }
+</style>
+```
+```html
+<body>
+    <h1 id="header">Hello World!</h1>
+    <h1>Hello World!</h1>
+
+    <h2 class="sub_header">HTML CSS JavsScript</h2>
+    <h3 class="sub_header">HTML CSS JavsScript</h2>
+</body>
+```
+- id : 고유한 값, 중복사용 불가능
+- class : 중복 사용 가능
+- id를 갖고있는 태그에 스타일을 줄 때는 `#id_name`을 하면된다.
+- class를 갖고있는 태그에 스타일을 줄 때는 `.class_name`을 하면된다.
+   
+```css
+/* 자주사용하는 스타일 */
+color: red;             /* 글자 색 */
+background: red;        /* 배경 색 */
+margin: 10px 20px;      /* 바깥 여백(상하 좌우) */
+padding: 10px 20px;     /* 안쪽 여백(상하 좌우) */
+width: 100px;           /* 너비 */
+height: 100px;          /* 높이 */
+font-weight: bold;      /* 글자 두껍게 */
+text-decoration: none;  /* 링크 밑줄 제거 */
+list-style: none;       /* 목록 점 제거 */
+display: block;         /* inline -> block */
+text-align: center;     /* 글자 가운데 정렬(좌우) */
+line-height: 50px;      /* 글자 가운데 정렬(상하) */
+...
