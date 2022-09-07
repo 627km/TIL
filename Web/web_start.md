@@ -162,5 +162,6 @@
 <input type="submit" value="LOGIN"> <!-- 입력된 값이 서버에 전달된다. -->
 </form>
 ```
-- `method="get"`방식은 id와 pwd가 노출된다.  
-- `method="post"`방식은 id와 pwd가 화면에 보이지 않고, 서버로 전달된다.
+> ![](input_tag.jpg)
+- `method="get"`방식은 id와 pwd를 입력하고 로그인버튼을 클릭하면 데이터가 노출된다.  
+- `method="post"`방식은 id와 pwd를 입력하고 로그인버튼을 클릭하면 화면에 보이지 않고, 서버로 전달된다.
