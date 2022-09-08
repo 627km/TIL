@@ -80,3 +80,52 @@ FLUSH PRIVILEGES;
 - `%`을 표기하면 원격 접속 권한을 준다는 의미이다. 
 - `GRANT`는 권한을 부여하는 명령어이다. 
 - `FLUSH PRIVILEGES`는 refresh 같은 의미이다.
+## 4. 조회(SELECT) 응용
+### 4.1 WHERE(조건)
+```sql
+-- id가 1711111인 데이터만 조회
+SELECT * FROM student
+WHERE id = 1711111;     
+
+-- name이 '유'로 시작하는 데이터만 조회
+SELECT * FROM student
+WHERE name LIKE '유%';  
+
+SELECT * FROM student
+WHERE id = 1711111 AND name LIKE '유%'  
+-- id가 1711111, 이름이 '유'로 시작. 이 두 조건을 모두 만족하는 데이터만 조회
+
+-- id가 1711111, 이름이 '박'으로 시작. 이 두 조건 중 하나라도 만족하는 데이터만 조회
+SELECT * FROM student
+WHERE id = 1711111 OR name LIKE '박%'  
+
+
+-- major가 세 개 중 하나에 해당하는 데이터를 조회
+SELECT * FROM student
+WHERE major IN ('화학공학과', '전자공학과', '기계공학과');
+
+-- major가 '전자공학과', '기계공학과'에 해당하지 않는 데이터를 조회
+SELECT * FROM student
+WHERE major NOT IN ('전자공학과', '기계공학과');
+
+```
+- `WHERE`절을 사용해서 데이터를 조회할 때 조건을 줄 수 있다.
+- 두개의 조건을 `AND` 나 `OR` 로 연결할 수 있다.
+- 여러개에 해당 혹은 해당하지 않는 데이터를 조회할 때 `IN`, `NOT IN` 사용
+### 4.2 ORDER BY(정렬)
+```sql
+-- id를 기준으로 오름차순(ASC) 정렬(id 숫자가 작은것이 위에 위치)
+SELECT * FROM student
+ORDER BY id ASC;
+
+-- id를 기준으로 내림차순(DESC) 정렬(id 숫자가 큰  것이 위에 위치)
+SELECT * FROM student
+ORDER BY id DESC;
+
+-- height를 기준으로 오름차순 정렬, 같은 height끼리는 id를 기준으로 내림차순 정렬
+SELECT * FROM student
+ORDER BY height ASC, id DESC;
+```
+- ASC(Ascending): 오름차순
+- DESC(Descending): 내림차순
+- 정렬 기준을 두개를 줄 수 있다. 
