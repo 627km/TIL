@@ -52,9 +52,13 @@ INSERT INTO student VALUES (1733333, '정준하', '기계공학과');
 ```sql
 SELECT * FROM student;  -- 전체
 SELECT num, name FROM student;  -- num, name만
+SELECT DISTINCT(major) FROM student;  -- 중복제외  
 ```
 - `*(asterisk)`를 입력하면 전체 column에 대한 데이터를 조회한다. 
-- 특정 column명(`num`, `name`)을 입력하면 그 column에 대한 데이터만 조회한다. 
+- 특정 column명(`num`, `name`)을 입력하면 그 column에 대한 데이터만 조회한다.
+- `DISTINCT`: 같은 `major`을 가진 학생이 여러명인 경우 학과를 조회할 때 증복되는 것을 제외하고 어떤 `major`가 있는지 조회한다.
+  > Ex) 화학공학과, 화학공학과, 전자공학과, 전자공학과   
+  -> 화학공학과, 전자공학과   
 ### 2.3 수정(UPDATE)
 ```sql
 UPDATE student SET major = '컴퓨터공학과' 
@@ -129,3 +133,15 @@ ORDER BY height ASC, id DESC;
 - ASC(Ascending): 오름차순
 - DESC(Descending): 내림차순
 - 정렬 기준을 두개를 줄 수 있다. 
+### 4.3 그룹(GROUP BY)
+```sql
+-- 전공별 키의 평균을 구하시오
+SELECT major, AVG(height) AS avg FROM student
+GROUP BY major -- ~별 에 해당하는 그룹을 짓은 기준column이 들어간다. 
+HAVING id > 1700000;  -- 조건
+```
+- `AVG()`, `SUM()`, `MAX()`, `MIN()` 과 같은 연산처리를 할 수 있다.
+- 이 경우 column 이름에 그대로 길게 들어가므로 AS(Alias)처리를 해준다. 
+- 보통 가입 월별, 연도별, 지역별 조회와 같은 경우에 사용된다. 
+- `GROUP BY`로 그룹을 만든 후 조건을 줄 때는 `WHERE`이 아닌 `HAVING` 절을 사용해야 한다. 
+
