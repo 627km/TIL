@@ -144,4 +144,24 @@ HAVING id > 1700000;  -- 조건
 - 이 경우 column 이름에 그대로 길게 들어가므로 AS(Alias)처리를 해준다. 
 - 보통 가입 월별, 연도별, 지역별 조회와 같은 경우에 사용된다. 
 - `GROUP BY`로 그룹을 만든 후 조건을 줄 때는 `WHERE`이 아닌 `HAVING` 절을 사용해야 한다. 
-
+## 5. 조인(JOIN)
+- 두개 이상의 테이블을 연결
+### 5.1 이너조인(INNER JOIN)
+```sql
+SELECT e.empno, d.deptno, e.empname FROM emp e
+INNER JOIN dept d
+ON e.dpetno = d.deptno;
+```
+- `emp` 테이블과 `dept` 테이블을 조인한다.
+- `ON ~`뒤에 조인될 조건을 입력한다.  
+- 기준테이블(`emp`)과 조인테이블(`dept`) 모두 데이터가 존재해야 조회가 된다. 
+### 5.2 아우터 조인(OUTER JOIN)
+```sql
+SELECT e.empname, d.deptname FROM emp e
+LEFT OUTER JOIN dept d 
+ON e.deptno = d.deptno
+```
+- `emp` 테이블과 `dept` 테이블을 아우터 조인한다.
+- `ON ~`뒤에 조인될 조건을 입력한다.  
+- 기준테이블(`emp`)에만 데이터가 존재하면 조회가 된다.
+- 아우터 조인에서 `LEFT`, `RIGHT`는 기준 테이블을 지정하는 것이다. 
