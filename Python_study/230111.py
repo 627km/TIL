@@ -1,3 +1,5 @@
+import time
+
 # Fibonacci Sequence with Recursion
 def fibonacci(i:int) -> int:
   if i < 2:
