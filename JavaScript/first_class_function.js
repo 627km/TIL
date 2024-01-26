@@ -48,5 +48,6 @@ console.log("겨울 세일 - " + discountPrice(10)(567000));
 let summerPrice = discountPrice(30);
 let winterPrice = discountPrice(10);
 
+// 반환값으로 함수가 오는 경우 변수에 담을 수 있으므로 직관적으로 어떤 코드인지 알기 쉽다.
 console.log("여름 세일 - " + summerPrice(567000));
 console.log("겨울 세일 - " + winterPrice(567000));
